@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="~{/views/layout :: head}">
+    <title>Title</title>
+</head>
+<body class="bg-body-tertiary">
+
+<div class="container">
+    <div class="justify-content-center ">
+        <div class=" card" style="width: 18rem;">
+            <img src="https://media.craiyon.com/2023-11-18/2IgLoFjjRieKJQE3K3UuCw.webp" class="w-auto card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">Cập nhật cầu thủ</h5>
+                <form action="/player/edit" th:object="${player}" method="post">
+                    <input type="hidden" th:field="*{id}">
+
+                    <div>
+                        <label class="form-label" for="name">Họ và tên</label>
+                        <input class="form-control" id="name" th:field="*{name}"/>
+                    </div>
+                    <div class="mt-2">
+                        <label class="form-label" for="dob">Ngày sinh</label>
+                        <input class="form-control" id="dob" th:field="*{dob}"/>
+                    </div>
+                    <div class="mt-2">
+                        <label class="form-label" for="experience">Kinh nghiệm</label>
+                        <input class="form-control" id="experience" th:field="*{experience}"/>
+                    </div>
+                    <div class="mt-2">
+                        <label class="form-label" for="position">Vị trí</label>
+                        <input class="form-control" id="position" th:field="*{position}"/>
+                    </div>
+                    <div class="mt-3 d-flex justify-content-end">
+                        <div class="me-2">
+                            <button  class="btn btn-primary">Lưu</button>
+                        </div>
+                        <div>
+                            <a href="/player" class="btn btn-primary">Trở lại</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

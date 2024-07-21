@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="~{/views/layout :: head}">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="container">
+    <div class="justify-content-center">
+        <div class="card" style="width: 18rem;">
+            <img src="https://media.craiyon.com/2023-11-18/2IgLoFjjRieKJQE3K3UuCw.webp"  class="card-img-top" >
+            <div class="card-body">
+                <h5 class="card-title" >Thêm cầu thủ</h5>
+                <form action="/player/create" th:object="${player}" method="post">
+                <table>
+
+                    <tr>
+                        <td>
+                            <p class="card-text">Họ và tên</p>
+                        </td>
+                        <td>:</td>
+                        <td><input class="card-text" th:field="*{name}"/></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="card-text">Ngày sinh</p>
+                        </td>
+                        <td>:</td>
+                        <td><input type="date" class="card-text" th:field="*{dob}"/></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="card-text">Kinh nghiệm</p>
+                        </td>
+                        <td>:</td>
+                        <td><input class="card-text" th:field="*{experience}"/></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="card-text" >Vị trí</p>
+                        </td>
+                        <td>:</td>
+                        <td><input class="card-text" th:field="*{position}"/></td>
+                    </tr>
+
+                    <tr>
+                        <td><button>Lưu</button></td>
+                    </tr>
+                </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
